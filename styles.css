@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	background: #add8e6;
+}
+table, td {
+	border: 2px solid lime;
+	border-collapse: collapse;
+}
+
+.memory-spel {
+	width: 640px;
+	height: 640px;
+	margin: auto;
+	padding-bottom: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	perspective: 1000px;
+	background: blue;
+}
+
+.kaart {
+	width: calc(25% - 10px);
+	height: 33.33%;
+	margin: 5px;
+	position: relative;
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: transform .5s;
+}
+
+.kaart:active {
+	transform: scale(.97);
+	transition: transform .2s;
+}
+
+.kaart.flip {
+	transform: rotateY(180deg);
+}
+
+.voorkant,
+.achterkant {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: absolute;
+	border-radius: 5px;
+	background: #1c7ccc;
+	backface-visibility: hidden;
+}
+.container2 {
+	margin-left: 45%;
+}
+
+.voorkant {
+	transform: rotateY(180deg);
+}
+
+#titel {
+    text-align: center;
+    background-color: green;
+    color: red;
+}
+div.cursors div {
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: red;
+	z-index: 100;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+}
+
+div.cursors div span {
+	position: absolute;
+	top: 0;
+	left: 40px;
+	width: 300px;
+
+	font-size: 32;
+	font-weight: 700;
+	line-height: 32px;
+	color: red;
+}
